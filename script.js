@@ -13,6 +13,8 @@ function RomanNumeralConverter(input) {
         return 'Please enter a valid number';
     } else if (input < 1) {
         return 'Please enter a number greater than or equal to 1';
+    } else if (input >= 4000) {
+        return 'Please enter a number less than or equal to 3999';
     } else {
         const roman = {
             M: 1000,
@@ -49,7 +51,16 @@ function RomanNumeralConverter(input) {
 }
 // End of Roman Numeral Converter Function
 
+// Output
 convertBtn.addEventListener('click', () => {
     output.textContent = RomanNumeralConverter(number.value);
     container.classList.add('change');
-})
+});
+
+number.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        output.textContent = RomanNumeralConverter(number.value);
+        container.classList.add('change');
+    }
+});
+// End of Output
