@@ -86,3 +86,8 @@ body {
     font-size: 3rem;
     font-weight: bold;
 }
+
+.change .output-field {
+    display: block;
+    visibility: visible;
+}
